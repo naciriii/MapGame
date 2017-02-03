@@ -1,0 +1,28 @@
+<ion-view view-title="<center>Commandes</center>">
+<div ng-include="'templates/tabs.html'" class="tabs-striped tabs-top tabs-background-light tabs-color-dark"  ></div>
+
+
+  <ion-content style="margin-top:50px;">
+    <div class="list" >
+      <div class="list list-inset">
+      <h1>Commandes <i class="icon ion-ios-cart-outline"></i> </h1>
+       
+      </div>
+    <div ng-repeat="commande in cmdctrl.commandes" class="item " href="" >
+      
+      <span class="item-note"><button ng-show="commande.status==1" class="button button-small button-balanced">Valide</button>
+      <button ng-show="commande.status==0" class="button button-small button-energized">En attente</button></span>
+      <p> Prix: {{commande.somme}} dt</p>
+      <label>
+    <span >Date: {{commande.date}}</span>
+
+  </label>
+        <span><a style="text-decoration:underline; cursor:pointer;" ng-click="cmdctrl.viewCmdDetails(commande.lignes,commande.somme)">Voir details</a></span>
+    </div>
+
+
+    
+
+</div>
+  </ion-content>
+</ion-view>

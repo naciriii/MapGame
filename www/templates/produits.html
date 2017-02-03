@@ -1,0 +1,31 @@
+<ion-view view-title="<center>Produit</center>">
+<div ng-include="'templates/tabs.html'" class="tabs-striped tabs-top tabs-background-light tabs-color-dark"  >
+
+  </div>
+
+
+  <ion-content style="margin-top:50px;" >
+<div class="list" style="margin-top:40px;">
+      <div class="list list-inset " >
+      <h2><b>{{apctrl.categories[pctrl.type]}}</b></h2>
+       <label class="item item-input">
+         <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Rechercher" ng-model="search">
+        </label>
+     
+      </div>
+    <a ng-repeat="produit in apctrl.produits |filter:search" class="item item-thumbnail-left" href="#/app/produits/detaille/{{produit.id}}" ng-if="produit.type==pctrl.type" >
+
+      <img ng-src="http://yassinfo-azix.rhcloud.com/products/{{produit.image}}">
+          <span class="item-note"> <img  ng-show='produit.promo==1' src="img/promo.jpg"></span>
+      <h2><b>{{produit.libelle}}</b></h2>
+      <h3>{{produit.prix}} dt</h3>
+
+    </a>
+
+
+    
+
+</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,48 @@
+<ion-view view-title="<center>Inscription</center>">
+<div ng-include="'templates/tabs.html'" class="tabs-striped tabs-top tabs-background-light tabs-color-dark"  ></div>
+
+
+  <ion-content style="margin-top:50px; padding:5px;">
+
+
+      <div class="list">
+          <h2 ><b>Inscription</b></h2>
+   <form ng-submit="insctrl.register()" name="form">
+        <label class="item item-input">
+          <span class="input-label">Login</span>
+          <input name="username" required ng-style="form.username.$touched&&form.username.$invalid&&{border:'2px solid red'}" type="text" ng-model="insctrl.client.username">
+        </label>
+      
+        <label class="item item-input">
+          <span class="input-label">Mot de passe</span>
+        <input name="password" ng-style="form.password.$touched&&form.password.$invalid&&{border:'2px solid red'}" required type="password" ng-model="insctrl.client.password">
+        </label>
+             <label class="item item-input">
+          <span class="input-label">Telephone</span>
+          <input name="tel" ng-style="form.tel.$touched&&form.tel.$invalid&&{border:'2px solid red'}" type="tel" ng-model="insctrl.client.tel" required>
+        </label>
+              <label class="item item-input">
+          <span class="input-label">Nom</span>
+          <input name="nom" ng-style="form.nom.$touched&&form.nom.$invalid&&{border:'2px solid red'}" type="text" ng-model="insctrl.client.nom" required >
+        </label>
+              <label class="item item-input">
+          <span class="input-label">Prenom</span>
+          <input name="prenom" ng-style="form.prenom.$touched&&form.prenom.$invalid&&{border:'2px solid red'}" type="text" ng-model="insctrl.client.prenom" required >
+        </label>
+               <label class="item item-input">
+          <span class="input-label">Adresse</span>
+          <input ng-style="form.adresse.$touched&&form.adresse.$invalid&&{border:'2px solid red'}" name="adresse" type="text" ng-model="insctrl.client.adresse" required >  
+        </label>
+
+        <label class="item">
+          <button ng-disabled="form.$invalid" class="button button-block button-positive" type="submit">S"inscrire"</button>
+        </label>
+            </form>
+      </div>
+
+
+    
+
+
+  </ion-content>
+</ion-view>

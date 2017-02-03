@@ -1,0 +1,46 @@
+<ion-view view-title="<center>Mon compte</center>">
+<div ng-include="'templates/tabs.html'" class="tabs-striped tabs-top tabs-background-light tabs-color-dark"  ></div>
+
+
+  <ion-content style="margin-top:50px; padding:5px;">
+  <div class="list">
+
+    <h3 >{{cctrl.client.login}}</h3>
+     <form ng-submit="cctrl.update()">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Login</span>
+          <input type="text"  ng-model="cctrl.client.login"  required value="{{cctrl.client.username}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Mot de passe</span>
+          <input type="password"  ng-model="cctrl.client.password" required value="{{cctrl.client.password}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">telephone</span>
+          <input type="tel"  ng-model="cctrl.client.tel"  required value="{{cctrl.client.tel}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Nom</span>
+          <input type="text"  ng-model="cctrl.client.nom" required value="{{cctrl.client.nom}}">
+        </label>
+         <label class="item item-input item-stacked-label">
+          <span class="input-label">Prenom</span>
+          <input type="text"  ng-model="cctrl.client.prenom" required value="{{cctrl.client.prenom}}" >
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Adresse</span>
+          <input type="text"  ng-model="cctrl.client.adresse"  required value="{{cctrl.client.adresse}}">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Modifier</button>
+        </label>
+      </div>
+    </form>
+   </div>
+
+    
+
+
+  </ion-content>
+</ion-view>

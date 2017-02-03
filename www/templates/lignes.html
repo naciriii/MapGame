@@ -1,0 +1,10 @@
+    <div  ng-repeat="produit in lignes" class="item item-thumbnail-left" href="" >
+      <img ng-src="http://yassinfo-azix.rhcloud.com/products/{{produit.image}}">
+
+      <a href="#/app/produits/detaille/{{produit.id}}"><h2>{{produit.libelle}}</h2></a>
+   
+      <p>{{produit.prix*produit.quantite}} dt </p>
+      <label>
+    <span >Quantité : {{produit.quantite}}</span>
+  </label>
+    </div>

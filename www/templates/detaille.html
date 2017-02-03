@@ -1,0 +1,47 @@
+<ion-view view-title="<center>Details</center>">
+<div ng-include="'templates/tabs.html'" class="tabs-striped tabs-top tabs-background-light tabs-color-dark"  ></div>
+
+
+  <ion-content style="margin-top:50px;" >
+   <div class="list card" ng-repeat="produit in apctrl.produits" ng-if="produit.id == pctrl.id">
+    <div class="row" >
+    <div class="col col-50" >
+      
+      
+      <h3><b>{{produit.libelle}}</b></h3>
+      
+     
+      <button class="button button-small button-balanced"  style="padding:1px 6px 1px 6px;" ng-show="produit.quantite>0">
+        En stock
+      </button>
+      <button class="button button-small button-assertive" style="padding:1px 6px 1px 6px;" ng-show="produit.quantite<1">
+        Non disponible
+      </button>
+
+    </div>
+  
+  <div class="col col-33 col-offset-20"><strong><h5>Prix :</h5></strong> <h5>{{produit.prix}} DT</h5>
+  <img src="img/promo.jpg" ng-show="produit.promo==1">
+  </div>
+
+</div>
+ 
+
+  <div class="item item-body">
+    <img  height="250" width="250" ng-src="http://yassinfo-azix.rhcloud.com/products/{{produit.image}}">
+    <p>
+{{produit.description}}   </p>
+    
+    <p>
+      <button ng-show="produit.quantite>0" class="button button-positive" ng-click="showAlert({{produit.id}},{{produit.quantite}})">
+      <i class="icon ion-ios-cart-outline"></i>&nbsp;
+        Ajouter au panier
+
+      </button>
+      
+    </p>
+  </div>
+
+</div>
+  </ion-content>
+</ion-view>

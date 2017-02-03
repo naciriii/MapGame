@@ -1,0 +1,29 @@
+<ion-view view-title="<center>Mon panier</center>">
+<div ng-include="'templates/tabs.html'" class="tabs-striped tabs-top tabs-background-light tabs-color-dark"  ></div>
+
+
+  <ion-content style="margin-top:50px;">
+    <div class="list" >
+      <div class="list list-inset">
+      <h1>Panier <i class="icon ion-ios-cart-outline"></i> <span class="item-note" id="somme"> <h3>{{apctrl.somme}} <b>dt</b></h3></span></h1>
+      <span ng-show="!auth"><button ui-sref="app.inscription" class="button button-small button-balanced">Inscription</button></span>
+       
+      </div>
+    <div ng-repeat="produit in apctrl.panier" class="item item-thumbnail-left" href="" >
+      <img ng-src="http://yassinfo-azix.rhcloud.com/products/{{produit.image}}">
+      <a href="#/app/produits/detaille/{{produit.id}}"><h2>{{produit.libelle}}</h2></a><span class="item-note"><button ng-click="panierDelete({{produit.id}})" class="button button-small button-assertive">Supprimer</button></span>
+      <p>{{produit.prix}} dt</p>
+      <label >
+    <span >Quantité : {{produit.quantite}}</span>
+  </label>
+    </div>
+    <label class="item">
+          <button ng-click="apctrl.login()" ng-if="!auth" class="button button-block button-positive" type="submit">Payer</button>
+            <button ng-Click="pctrl.payer()" ng-if="auth&&apctrl.somme>0" class="button button-block button-positive" type="submit">Payer</button>
+        </label>
+
+    
+
+</div>
+  </ion-content>
+</ion-view>
